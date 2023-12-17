@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login | BuildingConnected</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://d2w27agad0eft.cloudfront.net/css/bootstrap/main-3335dda144.css" rel="stylesheet">
+        <link href="https://d2w27agad0eft.cloudfront.net/css/utility/styles-0865bd7e94.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<div id="main" class="fixed-wrapper wrapper">
+  <!-- BC spinner -->
+  
+  <!-- Alloy spinner -->
+  <style>
+    .spinnerContainer {
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .spinner {
+      display: inline-block;
+      color: #0696D7;
+      width: 64px;
+      height: 64px;
+      transform: rotate(0deg);
+      animation: spin-animation 0.6s linear infinite;
+      -webkit-animation: spin-animation 0.6s linear infinite;
+    }
+
+    @-webkit-keyframes spin-animation {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin-animation {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <div class="spinnerContainer">
+    <div class="spinner">
+      <svg style="display:block" viewBox="32 32 64 64">
+        <defs>
+          <linearGradient gradientTransform="rotate(270)" id="indeterminateBlue" x1="50%" y1="100%" x2="50%" y2="0%">
+            <stop offset="0%" stop-opacity="0" stop-color="#0696D7"/>
+            <stop offset="100%" stop-opacity="1" stop-color="#0696D7"/>
+          </linearGradient>
+          <linearGradient gradientTransform="rotate(270)" id="indeterminateWhite" x1="50%" y1="100%" x2="50%" y2="0%">
+            <stop offset="0%" stop-opacity="0" stop-color="#fff" />
+            <stop offset="100%" stop-opacity="1" stop-color="#fff" />
+          </linearGradient>
+        </defs>
+        <circle role="ring-background" stroke="rgba(0, 0, 0, .05)" cx="64" cy="64" r="30" fill="none" stroke-width="4"/>
+        <circle role="ring-progress" stroke-linecap="round" stroke="url(#indeterminateBlue)" stroke-dasharray="188.496" stroke-dashoffset="94.248" cx="64" cy="64" r="30" fill="none" stroke-width="4"/>
+      </svg>
+    </div>
+  </div>
+  </div>
+
+
+<script nonce="">
+    var BC = BC || {};
+</script>
+
+
+<script nonce="">
+	// WARNING! READ BEFORE MAKING ANY EDITS!
+	// Do not use ES6+ syntax in this file.
+	// Using ES6+ will lead to syntax errors for IE users which will show up in sentry
+	// with very little context and are difficult to track down.  These errors
+	// also will be high volume, leading to us hitting sentry rate limits.
+	// Example: https://sentry.io/buildingconnected/opportunity-manager/issues/540070320/
+	window.timezone = "America/Los_Angeles";
+	var BC = BC || {};
+	BC.preloadDate = new Date();
+	BC.settings = {"bugsnag":{"bidding":{"frontend_api_key":"35dceafffcb1b52dd1f00553e2c3b734"},"enabled":true,"network":{"frontend_api_key":"ca76abd1bc462df3105c1efce2572830"},"risk":{"frontend_api_key":"9b689c9365130c33a2160605d019b937"}},"sentry":{"enabled":true,"urls":{"bidManager":"https://87337032f2824642814dfb15b2243518@sentry.io/224126","cs":"https://0db1ee59aece4d9686c89084c3662bd6@sentry.io/1724621","ei":"https://6eef1bdab09f45dd863b0cdedb80f605@sentry.io/290811","om":"https://43f574c81c574c71ae6cd47f6149ba0c@sentry.io/197115","qm":"https://c1da625723d840cbbff6aabc10a179e1@sentry.io/197116","risk":"https://e7d6b23a13ab48c193167b84ec5c268c@o22135.ingest.sentry.io/5403362","search":"https://7c045c73a2b548f985c9f6595fd83a94@sentry.io/1241696","services":"https://076bffbe01604bb2962ee3f346cf1be3@o22135.ingest.sentry.io/5781076","webapp":"https://8a98568b14824093a09240d84e5c11d0@app.getsentry.com/44743","i18n":"https://448acb9e55534b7693fb0bcec45dedbb@sentry.io/5169271","default":"https://8a98568b14824093a09240d84e5c11d0@app.getsentry.com/44743"}},"googleAnalytics":{"cookieDomain":"buildingconnected.com","ua":"UA-38247796-4"},"googleKey":"AIzaSyACfrRZxCPbpeCjnNi8b9OPUA5d9KmWzxQ","mapboxKey":"pk.eyJ1IjoiYnVpbGRpbmdjb25uZWN0ZWQiLCJhIjoiY2p4Y2R6ODdiMDJmcTN5bXB1MGV2YXc2bSJ9.EimAgGrnzRCeX-h1faIJUg","mapboxStaticImageKey":"pk.eyJ1IjoiYnVpbGRpbmdjb25uZWN0ZWQiLCJhIjoiY2p4Y2UwYmluMDJmcDN5bXdqeG10ajJ1OCJ9.O9Z5ZX1UEgx3umlI-lDGhA","mixpanel":{"token":"b63ed7752060c984b8e765f47d3d66c7"},"notificationsPoll":60000,"pendo":{"enabled":true},"localeForAnonymousUserOnly":"en-US"};
+	BC.clientHash = "6cb6eb8b14ffe17f9067dc544928fe3f4d0bbc8e";
+	BC.AWSConfig = {"key":"AKIASGFYYHT7GB5CQOFI","bucket":"files.buildingconnected.com"};
+	BC.clockDrift = 1702849945211 - Date.now();
+	BC.extra = {};
+	BC.launchdarklyClientSideId = "";
+  BC.launchdarklyAnonUserId = "ldId_640fa97b960d3b0035310ddf";
+  BC.featureFlags = {"BBCalendarImprovement":false,"BBReportsToAthena":false,"BBteamsNDABidForms":true,"IgnoreConnectionErrorsAtStartup":false,"OVERVIEW_BID_FORM_TAB_TEXT_20190827":"CONTROL","WelcomeFlowV2":true,"additionalLineItemsToggle":true,"addressI18n":true,"alloyBBStatusBtn":true,"alloyCardCanvas":511,"alloyColoredSideNav":true,"alloyDatePicker":true,"alloyGroupPSCM":true,"alloyMessagesV1":true,"alloyModals":true,"alloyPageHeader":true,"alloySelectBox":false,"alloySideNav":true,"alloyV1FeatureFlag":true,"autodeskIdInviteToOffice":true,"autodeskIdInviteToProject":true,"autodeskIdJoinRfp":true,"autodeskIdOrganicSignUp":true,"axios-forge-proxy":false,"axiosForgeProxy":true,"bbAsyncDownloadReport":false,"bbClientSortKey":false,"bbFoldersInInternalFiles":true,"bbMultiScopeEdits":false,"bbOpportunityRules":"opportunityRules","bbPrimaryContacts":"primaryContact","bbProjectGrouping":true,"bbReportsToAthena":false,"bbSecurityFixNdaAttachments":true,"bbSecurityFixProposalAttachments":true,"bbSettingsBlockers":true,"bcClientDropdownMenu":true,"bcDocsClientFilePublishing":false,"bcProLMV":true,"betterBidderHistory":true,"betterEditingV1":true,"bid-invite-recommender":false,"bidBoardFilesAndAddenda":true,"bidBoardOverviewOneClickFollow":"CONTROL","bidBoardQuickFind":true,"bidBoardSubmittedToggleActionButtons":"variant_a","bidStatsSkipRecompute":false,"bidboardOpportunityActivityLog":true,"bidboardProjectCard":true,"bypassIMGIX":true,"cacheRecommendationsInRedis":true,"calendarWorkflowBucket":true,"companyFuture":true,"contactsFuture":true,"countWorkflowBucket":true,"customQuestionTipForStandardQuestionsEnabled":true,"dacloudBidInviteRecommender":true,"dbeGaTracking":true,"dbeTracking":true,"derivatives-low-priority-queue":false,"docsForceNoDerivatives":true,"docsInBB":false,"downloadSelected":true,"filterPaginateSuggestedEdits":false,"forceHealthyStatus":false,"global_holdout_february_2020":false,"hide-qm":true,"hideEnterpriseType":false,"hideLegacyApi":true,"hwBidCostIntegration":false,"isBLOEnabled":true,"isBLOv2Enabled":false,"logRocket":false,"manual-add-v2":true,"manualAddV21":"VARIANT_A","manualAddv2ClientTest":"onlyEmailExactMatch","mexico":false,"moveTakeoffs":false,"newFileNavBoxIntegration":true,"newNbsSurvey":false,"offloadMongoQueries":false,"omvCalendarEventsImprovement":false,"omvImprovements":true,"omvLeaderboardImprovement":false,"omvMemberTypeImprovements":false,"onboardToAcc":false,"opportunityEventsImprovements":true,"opportunitySuggestedGroupsV2":false,"phoneI18n":true,"planroom":false,"pqFuture":true,"precomputeNdaDataForOmvs":false,"primary-contact-visual-distinction":true,"productPicker":true,"profile-future":true,"projectFileTreeNodes":true,"projectGraphHighValueScoreThreshold":1,"projectGraphLowValueScoreThreshold":1,"projectsFuture":true,"publicApiV2":true,"qualificationAlloy":false,"questionnaireSubmissionUiUpdates":true,"rfcComments":true,"sampleFiles":true,"serviceAreaSuggestedEdits":false,"shareCloseLostOutcome":true,"sheetProcessingV1":false,"sheetsInBidBoard":false,"show-qm-for-vendor":false,"showAutodeskAccount":true,"showAutodeskAccountInterstitial":false,"showAutodeskAccountPoptart":false,"sidePanelCta":true,"structuredLogs":true,"suggested-groups":true,"tradeTappProductPicker":true,"truncatePathsForWindowsArchive":true,"use-xbe-certs-in-quals":true,"useConstructionProxy":false,"useDirectToS3":true,"useGracefulDegradation":false,"usePrecomputedNdaForSearchV2":false,"useRedisCachingLayer":true,"user-mentions":false,"userIdAndMemberType":false,"warnEnterpriseType":true,"webhooksV2":true,"writePublicApiV2":true,"$flagsState":{"BBCalendarImprovement":{"variation":1,"version":2},"BBReportsToAthena":{"variation":1,"version":3},"BBteamsNDABidForms":{"variation":0,"version":6},"IgnoreConnectionErrorsAtStartup":{"variation":1,"version":4},"OVERVIEW_BID_FORM_TAB_TEXT_20190827":{"variation":0,"version":4},"WelcomeFlowV2":{"variation":0,"version":14},"additionalLineItemsToggle":{"variation":0,"version":4},"addressI18n":{"variation":0,"version":9},"alloyBBStatusBtn":{"variation":0,"version":6},"alloyCardCanvas":{"variation":0,"version":13},"alloyColoredSideNav":{"variation":0,"version":5},"alloyDatePicker":{"variation":0,"version":13},"alloyGroupPSCM":{"variation":0,"version":17},"alloyMessagesV1":{"variation":0,"version":5},"alloyModals":{"variation":0,"version":5},"alloyPageHeader":{"variation":0,"version":5},"alloySelectBox":{"variation":1,"version":2},"alloySideNav":{"variation":0,"version":5},"alloyV1FeatureFlag":{"variation":0,"version":16},"autodeskIdInviteToOffice":{"variation":0,"version":4},"autodeskIdInviteToProject":{"variation":0,"version":4},"autodeskIdJoinRfp":{"variation":0,"version":4},"autodeskIdOrganicSignUp":{"variation":0,"version":4},"axios-forge-proxy":{"variation":1,"version":5},"axiosForgeProxy":{"variation":0,"version":10},"bbAsyncDownloadReport":{"variation":1,"version":2},"bbClientSortKey":{"variation":1,"version":3},"bbFoldersInInternalFiles":{"variation":0,"version":7},"bbMultiScopeEdits":{"variation":1,"version":5},"bbOpportunityRules":{"variation":1,"version":30},"bbPrimaryContacts":{"variation":1,"version":55},"bbProjectGrouping":{"variation":0,"version":5},"bbReportsToAthena":{"variation":1,"version":2},"bbSecurityFixNdaAttachments":{"variation":0,"version":6},"bbSecurityFixProposalAttachments":{"variation":0,"version":6},"bbSettingsBlockers":{"variation":0,"version":8},"bcClientDropdownMenu":{"variation":0,"version":10},"bcDocsClientFilePublishing":{"variation":1,"version":3},"bcProLMV":{"variation":0,"version":13},"betterBidderHistory":{"variation":0,"version":7},"betterEditingV1":{"variation":0,"version":12},"bid-invite-recommender":{"variation":1,"version":123},"bidBoardFilesAndAddenda":{"variation":0,"version":12},"bidBoardOverviewOneClickFollow":{"variation":0,"version":6},"bidBoardQuickFind":{"variation":0,"version":18},"bidBoardSubmittedToggleActionButtons":{"variation":1,"version":9},"bidStatsSkipRecompute":{"variation":1,"version":4},"bidboardOpportunityActivityLog":{"variation":0,"version":7},"bidboardProjectCard":{"variation":0,"version":18},"bypassIMGIX":{"variation":0,"version":28},"cacheRecommendationsInRedis":{"variation":0,"version":7},"calendarWorkflowBucket":{"variation":0,"version":12},"companyFuture":{"variation":0,"version":7},"contactsFuture":{"variation":0,"version":4},"countWorkflowBucket":{"variation":0,"version":16},"customQuestionTipForStandardQuestionsEnabled":{"variation":0,"version":3},"dacloudBidInviteRecommender":{"variation":0,"version":8},"dbeGaTracking":{"variation":0,"version":15},"dbeTracking":{"variation":0,"version":37},"derivatives-low-priority-queue":{"variation":1,"version":3},"docsForceNoDerivatives":{"variation":0,"version":19},"docsInBB":{"variation":1,"version":2},"downloadSelected":{"variation":0,"version":6},"filterPaginateSuggestedEdits":{"variation":1,"version":2},"forceHealthyStatus":{"variation":1,"version":3},"global_holdout_february_2020":{"variation":1,"version":4},"hide-qm":{"variation":0,"version":15},"hideEnterpriseType":{"variation":1,"version":2},"hideLegacyApi":{"variation":0,"version":3},"hwBidCostIntegration":{"variation":1,"version":2},"isBLOEnabled":{"variation":0,"version":12},"isBLOv2Enabled":{"variation":1,"version":4},"logRocket":{"variation":1,"version":8},"manual-add-v2":{"variation":0,"version":20},"manualAddV21":{"variation":0,"version":7},"manualAddv2ClientTest":{"variation":3,"version":11},"mexico":{"variation":1,"version":2},"moveTakeoffs":{"variation":1,"version":3},"newFileNavBoxIntegration":{"variation":0,"version":8},"newNbsSurvey":{"variation":1,"version":11},"offloadMongoQueries":{"variation":1,"version":2},"omvCalendarEventsImprovement":{"variation":1,"version":2},"omvImprovements":{"variation":0,"version":5},"omvLeaderboardImprovement":{"variation":1,"version":2},"omvMemberTypeImprovements":{"variation":1,"version":2},"onboardToAcc":{"variation":1,"version":2},"opportunityEventsImprovements":{"variation":0,"version":10},"opportunitySuggestedGroupsV2":{"variation":1,"version":2},"phoneI18n":{"variation":0,"version":10},"planroom":{"variation":1,"version":4},"pqFuture":{"variation":0,"version":7},"precomputeNdaDataForOmvs":{"variation":1,"version":2},"primary-contact-visual-distinction":{"variation":0,"version":8},"productPicker":{"variation":0,"version":8},"profile-future":{"variation":0,"version":6},"projectFileTreeNodes":{"variation":0,"version":11},"projectGraphHighValueScoreThreshold":{"variation":1,"version":2},"projectGraphLowValueScoreThreshold":{"variation":1,"version":2},"projectsFuture":{"variation":0,"version":7},"publicApiV2":{"variation":0,"version":6},"qualificationAlloy":{"variation":1,"version":2},"questionnaireSubmissionUiUpdates":{"variation":0,"version":6},"rfcComments":{"variation":0,"version":3},"sampleFiles":{"variation":0,"version":3},"serviceAreaSuggestedEdits":{"variation":1,"version":7},"shareCloseLostOutcome":{"variation":0,"version":13},"sheetProcessingV1":{"variation":1,"version":2},"sheetsInBidBoard":{"variation":1,"version":2},"show-qm-for-vendor":{"variation":1,"version":4},"showAutodeskAccount":{"variation":0,"version":7},"showAutodeskAccountInterstitial":{"variation":1,"version":8},"showAutodeskAccountPoptart":{"variation":1,"version":9},"sidePanelCta":{"variation":0,"version":10},"structuredLogs":{"variation":0,"version":3},"suggested-groups":{"variation":0,"version":22},"tradeTappProductPicker":{"variation":0,"version":8},"truncatePathsForWindowsArchive":{"variation":0,"version":10},"use-xbe-certs-in-quals":{"variation":0,"version":8},"useConstructionProxy":{"variation":1,"version":2},"useDirectToS3":{"variation":0,"version":10},"useGracefulDegradation":{"variation":1,"version":14},"usePrecomputedNdaForSearchV2":{"variation":1,"version":3},"useRedisCachingLayer":{"variation":0,"version":11},"user-mentions":{"variation":1,"version":13},"userIdAndMemberType":{"variation":1,"version":2},"warnEnterpriseType":{"variation":0,"version":4},"webhooksV2":{"variation":0,"version":13},"writePublicApiV2":{"variation":0,"version":7}},"$valid":true};
+  BC.forgeHost = "developer.api.autodesk.com";
+  BC.proxyHost = "https://constructionproxyservice.auto.prod-use1-pg-1.us-east-1.plangrid.planfront.net";
+  BC.bimDocsACMNamespace = "BIMDOCS";
+  BC.accHost = "https://acc.autodesk.com/";
+  BC.accPlangridHost = "io.app.plangrid.com";
+  BC.acmNamespace = "bc-application-joglkrer40unbaglksf7amg3dbfeggwf";
+  BC.ipHash = "988797c4fb96c625969550e959c64d47";
+</script>
+
+<style>
+	@font-face {
+    font-family: 'Artifakt Element';
+    src: local('Artifakt Element Regular'), local('ArtifaktElement-Regular'), url('https://swc.autodesk.com/pharmacopeia/fonts/ArtifaktElement/v1.0/WOFF2/Artifakt%20Element%20Regular.woff2') format('woff2'), local('Artifakt Element Regular'), local('ArtifaktElement-Regular'), url('https://swc.autodesk.com/pharmacopeia/fonts/ArtifaktElement/v1.0/WOFF/Artifakt%20Element%20Regular.woff') format('woff'), local('Artifakt Element Regular'), local('ArtifaktElement-Regular'), url('https://swc.autodesk.com/pharmacopeia/fonts/ArtifaktElement/v1.0/TTF/Artifakt%20Element%20Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+	}
+	@font-face {
+		font-family: 'Artifakt Element';
+		src: url('https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Book.eot'); /* IE9 Compat Modes */
+		src: url('https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Book.eot?#iefix')
+				format('embedded-opentype'),
+			/* IE6-IE8 */ local('Artifakt Element Book'), local('ArtifaktElement-Book'),
+			url('https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Book.woff2')
+				format('woff2'),
+			/* Super Modern Browsers */ local('Artifakt Element Book'),
+			local('ArtifaktElement-Book'),
+			url('https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Book.woff')
+				format('woff'),
+			/* Pretty Modern Browsers */ local('Artifakt Element Book'),
+			local('ArtifaktElement-Book'),
+			url('https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Book.ttf')
+				format('truetype'); /* Safari, Android, iOS */
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Artifakt Element';
+		src: url('https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Medium.eot'); /* IE9 Compat Modes */
+		src: url('https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Medium.eot?#iefix')
+				format('embedded-opentype'),
+			/* IE6-IE8 */ local('Artifakt Element Medium'),
+			local('ArtifaktElement-Medium'),
+			url('https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Medium.woff2')
+				format('woff2'),
+			/* Super Modern Browsers */ local('Artifakt Element Medium'),
+			local('ArtifaktElement-Medium'),
+			url('https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Medium.woff')
+				format('woff'),
+			/* Pretty Modern Browsers */ local('Artifakt Element Medium'),
+			local('ArtifaktElement-Medium'),
+			url('https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Medium.ttf')
+				format('truetype'); /* Safari, Android, iOS */
+		font-weight: 600;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Artifakt Element';
+		src: url('https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Bold.eot'); /* IE9 Compat Modes */
+		src: url('https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Bold.eot?#iefix')
+				format('embedded-opentype'),
+			/* IE6-IE8 */ local('Artifakt Element Bold'), local('ArtifaktElement-Bold'),
+			url('https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Bold.woff2')
+				format('woff2'),
+			/* Super Modern Browsers */ local('Artifakt Element Bold'),
+			local('ArtifaktElement-Bold'),
+			url('https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Bold.woff')
+				format('woff'),
+			/* Pretty Modern Browsers */ local('Artifakt Element Bold'),
+			local('ArtifaktElement-Bold'),
+			url('https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Bold.ttf')
+				format('truetype'); /* Safari, Android, iOS */
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Artifakt Element';
+		src: url('https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Black.eot'); /* IE9 Compat Modes */
+		src: url('https://fonts.autodesk.com/ArtifaktElement/EOT/Artifakt%20Element%20Black.eot?#iefix')
+				format('embedded-opentype'),
+			/* IE6-IE8 */ local('Artifakt Element Black'),
+			local('ArtifaktElement-Black'),
+			url('https://fonts.autodesk.com/ArtifaktElement/WOFF2/Artifakt%20Element%20Black.woff2')
+				format('woff2'),
+			/* Super Modern Browsers */ local('Artifakt Element Black'),
+			local('ArtifaktElement-Black'),
+			url('https://fonts.autodesk.com/ArtifaktElement/WOFF/Artifakt%20Element%20Black.woff')
+				format('woff'),
+			/* Pretty Modern Browsers */ local('Artifakt Element Black'),
+			local('ArtifaktElement-Black'),
+			url('https://fonts.autodesk.com/ArtifaktElement/TTF/Artifakt%20Element%20Black.ttf')
+				format('truetype'); /* Safari, Android, iOS */
+		font-weight: 800;
+		font-style: normal;
+	}
+</style>
+
+<script nonce="">
+	// Keep track of any errors that occur prior to Sentry loading
+	window.__bcUncaughtErrors = []
+
+	window.onerror = function onerror(
+		messageOrEvent,
+		source,
+		lineno,
+		colno,
+		error
+	) {
+		if (typeof Sentry === 'undefined') {
+			window.__bcUncaughtErrors.push(error || messageOrEvent)
+		}
+	}
+</script>
+
+
+<script
+	src="https://d2w27agad0eft.cloudfront.net/js/runtime.be995b2f14811ed7a87e.min.js"
+	class="app-scripts"
+	charset="utf-8"
+	crossorigin="anonymous"
+	defer
+></script>
+<script
+	src="https://d2w27agad0eft.cloudfront.net/js/adsk.aa8bc0b610c5e1c69cc8.min.js"
+	class="app-scripts"
+	charset="utf-8"
+	crossorigin="anonymous"
+	defer
+></script>
+<script
+	src="https://d2w27agad0eft.cloudfront.net/js/vendor-27545368.31f83fd48857ffb601a8.min.js"
+	class="app-scripts"
+	charset="utf-8"
+	crossorigin="anonymous"
+	defer
+></script>
+<script
+	src="https://d2w27agad0eft.cloudfront.net/js/common-a81da72c.d9fbf8973a924c7be99b.min.js"
+	class="app-scripts"
+	charset="utf-8"
+	crossorigin="anonymous"
+	defer
+></script>
+<script
+	src="https://d2w27agad0eft.cloudfront.net/js/vendor-cdd60c62.4e1129f72ed47f9f5db1.min.js"
+	class="app-scripts"
+	charset="utf-8"
+	crossorigin="anonymous"
+	defer
+></script>
+<script
+	src="https://d2w27agad0eft.cloudfront.net/js/common-bde52cb3.f42834ca67eb452f3345.min.js"
+	class="app-scripts"
+	charset="utf-8"
+	crossorigin="anonymous"
+	defer
+></script>
+<script
+	src="https://d2w27agad0eft.cloudfront.net/js/common-3338aecb.42fe8393bf1123705eaf.min.js"
+	class="app-scripts"
+	charset="utf-8"
+	crossorigin="anonymous"
+	defer
+></script>
+<script
+	src="https://d2w27agad0eft.cloudfront.net/js/landing.264f372182b411baa972.min.js"
+	class="app-scripts"
+	charset="utf-8"
+	crossorigin="anonymous"
+	defer
+></script>
+
+<script nonce="">
+	function __bcLoadFallbackScript(url) {
+		var script = document.createElement('script')
+		script.src = '/js-fallback?src=' + encodeURIComponent(url)
+		script.async = false
+		document.body.appendChild(script)
+	}
+
+	// If our app bundles fail to load, retry, falling back to proxying through Node
+	var appScripts = document.querySelectorAll('script.app-scripts')
+	var i = 0
+	while (i < appScripts.length) {
+		var element = appScripts[i]
+		element.addEventListener('error', function __bcHandleScriptLoadError(
+			event
+		) {
+			__bcLoadFallbackScript(event.target.src)
+		})
+		i++
+	}
+</script>
+
+<script nonce="">
+  window.ErrorNotifyHelper = (function () {
+    var BC = window.BC || {};
+    var lastErrorMessage;
+    var dateLastReportedError;
+
+    function find(arr, validator) {
+      for (var i = 0; i < arr.length; i++) {
+        if (validator(arr[i])) {
+          return arr[i]
+        }
+      }
+
+      return null
+    }
+
+    function matchExact(set, subset) {
+      return subset.every(function (value) {
+        return set.indexOf(value) !== -1
+      })
+    }
+
+    function matchPath(paths) {
+      return function (pathPart) {
+        return paths.indexOf(pathPart) !== -1
+      }
+    }
+
+    // See top of file for explanation
+    function includesPolyfill(arrayOrString, str) {
+      return arrayOrString.indexOf(str) !== -1
+    }
+
+    function isSearchError(fingerprint) {
+      return (
+        includesPolyfill(fingerprint, 'userEvents error') ||
+        (fingerprint[3] &&
+          (includesPolyfill(fingerprint[3], '/api/search') ||
+            includesPolyfill(fingerprint[3], '/api/searchv3')))
+      )
+    }
+
+    function isI18nError(fingerprint) {
+      return (
+        includesPolyfill(fingerprint, 'intl-error')
+      )
+    }
+
+    function isFrontendPlatformError(fingerprint) {
+      return includesPolyfill(fingerprint, 'fe-platform')
+    }
+
+    function getDsnUrl(pathname, sentryDsnUrls, fingerprint) {
+      /*
+      Handle fingerprints first so they get priority.
+      TODO: refactor function so the order is defined here rather than
+      combining the two checks under one function
+      */
+      if (isSearchError(fingerprint)) {
+        return sentryDsnUrls.search;
+      }
+
+      if (isI18nError(fingerprint)) {
+        return sentryDsnUrls.i18n;
+      }
+
+      // Use default dsn if pathname could not be parsed
+      // or if the fingerprint specifies fe-platform explicitly
+      if (!pathname || isFrontendPlatformError(fingerprint)) {
+        return sentryDsnUrls.default;
+      }
+
+      var pathParts = pathname.split('/');
+
+      if (
+        find(
+          pathParts, matchPath([
+            'companies', 'profile', 'account-settings', 'notifications',
+          ])
+        )
+      ) {
+        return sentryDsnUrls.search;
+      }
+
+      if (matchExact(pathParts, ['opportunities', 'files']) || matchExact(pathParts, ['opportunities', 'internal-files'])) {
+        return sentryDsnUrls.cs;
+      }
+
+      if (find(pathParts, matchPath(['opportunities', 'rfps', 'join-rfp']))) {
+        return sentryDsnUrls.om;
+      }
+
+      if (find(pathParts, matchPath(['pq']))) {
+        return sentryDsnUrls.qm;
+      }
+
+      if (find(pathParts, matchPath(['projects', 'bid-history']))) {
+        return sentryDsnUrls.bidManager;
+      }
+
+      if (find(pathParts, matchPath(['risk']))) {
+        return sentryDsnUrls.risk;
+      }
+      return sentryDsnUrls.default;
+    }
+
+    function getBugsnagProject(pathname, fingerprint) {
+
+      var _pathname = window.location.pathname
+      var _fingerprint = ''
+      if (pathname) {
+        _pathname = pathname
+      }
+      if (fingerprint) {
+        _fingerprint = fingerprint
+      }
+      /*
+      Handle fingerprints first so they get priority.
+      */
+      if (isSearchError(_fingerprint)) {
+        return 'network';
+      }
+
+      // Use default dsn if pathname could not be parsed
+      // or if the fingerprint specifies fe-platform explicitly
+      if (!_pathname || isFrontendPlatformError(_fingerprint)) {
+        return 'bidding';
+      }
+
+      var pathParts = _pathname.split('/');
+
+      if (
+        find(
+          pathParts, matchPath([
+            'companies', 'profile', 'account-settings', 'welcome'
+          ])
+        )
+      ) {
+        return 'network';
+      }
+
+      if (find(pathParts, matchPath(['risk']))) {
+        return 'risk';
+      }
+      return 'bidding';
+    }
+
+    function getFullStoryLink() {
+      if (window['_fs_org'] && window.BC && window.BC.me) {
+        return (
+          'https://app.fullstory.com/ui/' +
+          window['_fs_org'] +
+          '/segments/everyone/people:search:((NOW%2FDAY-29DAY:NOW%2FDAY%2B1DAY):' +
+          '((UserAppKey:==:%22' +
+          encodeURIComponent(window.BC.me._id) +
+          '%22)):():():():)/0'
+        );
+      }
+      return null;
+    }
+
+    function shouldSendErrorToBugsnag(event) {
+      try {
+        var originalError = event.originalError
+        // We get a lot of these errors on a regular basis and often get rate limited by Sentry.
+        // Let's exclude them from going out altogether.
+        if (
+          /403 POST Forbidden \/api\/accounts\/create/.test(originalError.message)
+        ) {
+          return false;
+        }
+        // We do not want to log this error message for browsers with the InfoPath add in installed.
+        // See https://trello.com/c/31kO0JdC for more information.
+        var hasInfoPath =
+          event.request && event.request.headers && event.request.headers['User-Agent'] && event.request.headers['User-Agent']
+            .toLowerCase()
+            .indexOf('infopath') >= 0;
+        var isRemoveChildError =
+          originalError.message ===
+          "TypeError: Unable to get property 'removeChild' of undefined or null reference";
+
+        // We don't want to log this error message for browsers
+        // https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
+        // Since FireFox 69 release, we have been getting `ResizeObserver loop completed with undelivered notifications` regularly.
+        // This is because of the async scrolling on the BB pipeline view.
+        var resizeObserverExceptionPattern = /ResizeObserver loop (limit exceeded|completed with undelivered notifications)/gi;
+        if (resizeObserverExceptionPattern.test(originalError.message)) {
+          return false;
+        }
+        if (event.errors && event.errors.length) {
+          for (var i = 0; i < event.errors.length; i++) {
+            if (
+              resizeObserverExceptionPattern.test(
+                event.errors[i].message
+              )
+            ) {
+              return false;
+            }
+          }
+        }
+
+
+        // We don't want to log an error if it is the same as the last error we logged and it
+        // happened within the last 10 minutes.
+        var TEN_MIN = 10 * 60 * 1000;
+        var matchesLastMessage = false;
+        var lastErrorReportedWasWithinTenMin = dateLastReportedError ?
+          new Date() - dateLastReportedError < TEN_MIN :
+          false;
+
+        if (
+          originalError.message
+        ) {
+          matchesLastMessage =
+            originalError.message === lastErrorMessage
+          lastErrorMessage = originalError.message;
+        }
+
+        var shouldSend = !(lastErrorReportedWasWithinTenMin && matchesLastMessage) &&
+          !(hasInfoPath && isRemoveChildError);
+
+        if (shouldSend) {
+          dateLastReportedError = new Date();
+        }
+        return shouldSend;
+      } catch (ex) {
+        return true;
+      }
+    }
+
+    function shouldSendError(data) {
+      try {
+        // We get a lot of these errors on a regular basis and often get rate limited by Sentry.
+        // Let's exclude them from going out altogether.
+        if (
+          /403 POST Forbidden \/api\/accounts\/create/.test(data.message)
+        ) {
+          return false;
+        }
+        // We do not want to log this error message for browsers with the InfoPath add in installed.
+        // See https://trello.com/c/31kO0JdC for more information.
+        var hasInfoPath =
+          data.request.headers['User-Agent']
+            .toLowerCase()
+            .indexOf('infopath') >= 0;
+        var isRemoveChildError =
+          data.message ===
+          "TypeError: Unable to get property 'removeChild' of undefined or null reference";
+
+        // We don't want to log this error message for browsers
+        // https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
+        // Since FireFox 69 release, we have been getting `ResizeObserver loop completed with undelivered notifications` regularly.
+        // This is because of the async scrolling on the BB pipeline view.
+        var resizeObserverExceptionPattern = /ResizeObserver loop (limit exceeded|completed with undelivered notifications)/gi;
+        if (data.exception && data.exception.values) {
+          for (var i = 0; i < data.exception.values.length; i++) {
+            if (
+              resizeObserverExceptionPattern.test(
+                data.exception.values[i].value
+              )
+            ) {
+              return false;
+            }
+          }
+        }
+        if (resizeObserverExceptionPattern.test(data.message)) {
+          return false;
+        }
+
+        // We don't want to log an error if it is the same as the last error we logged and it
+        // happened within the last 10 minutes.
+        var TEN_MIN = 10 * 60 * 1000;
+        var matchesLastMessage = false;
+        var lastErrorReportedWasWithinTenMin = dateLastReportedError ?
+          new Date() - dateLastReportedError < TEN_MIN :
+          false;
+
+        if (
+          data.exception &&
+          data.exception.values &&
+          data.exception.values.length === 1
+        ) {
+          matchesLastMessage =
+            data.exception.values[0].value === lastErrorMessage
+          lastErrorMessage = data.exception.values[0].value;
+        }
+
+        var shouldSend = !(lastErrorReportedWasWithinTenMin && matchesLastMessage) &&
+          !(hasInfoPath && isRemoveChildError);
+
+        if (shouldSend) {
+          dateLastReportedError = new Date();
+        }
+        return shouldSend;
+      } catch (ex) {
+        return true;
+      }
+    }
+
+    return {
+      getFullStoryLink: getFullStoryLink,
+      shouldSendError: shouldSendError,
+      getDsnUrl: getDsnUrl,
+      getBugsnagProject: getBugsnagProject,
+      shouldSendErrorToBugsnag: shouldSendErrorToBugsnag,
+    }
+  })()
+</script>
+
+<!-- Specify `defer` to prevent slowness on Sentry's end delaying our page load -->
+<script
+  src="https://browser.sentry-cdn.com/6.13.2/bundle.min.js"
+  integrity="sha256-iXQnjqSFAh+P9279ilGLRBR4w7f0sMAjgGi9aA/2fCo="
+  crossorigin="anonymous"
+  id="sentryjs"
+  defer></script>
+<script nonce="">
+	var sentryScriptElement = document.querySelector('script#sentryjs')
+	sentryScriptElement.addEventListener('load', function() {
+		var BC = window.BC || {}
+		;(function() {
+			var sentryDsnUrls = BC.settings.sentry.urls
+			var fePlatformClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.default
+			});
+			var searchClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.search
+			});
+			var i18nClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.i18n
+			})
+			var qmClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.qm
+			})
+			var bidManagerClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.bidManager
+			})
+			var opportunityManagerClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.om
+			})
+			var emailIngestionClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.ei
+			})
+			var coreServicesClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.cs
+			})
+			var riskClient = new window.Sentry.BrowserClient({
+				dsn: sentryDsnUrls.risk
+			})
+
+			// Sentry client routing handled through this object
+			var dsnToClient = {}
+			dsnToClient[sentryDsnUrls.default] = fePlatformClient
+			dsnToClient[sentryDsnUrls.search] = searchClient
+			dsnToClient[sentryDsnUrls.i18n] = i18nClient
+			dsnToClient[sentryDsnUrls.qm] = qmClient
+			dsnToClient[sentryDsnUrls.bidManager] = bidManagerClient
+			dsnToClient[sentryDsnUrls.om] = opportunityManagerClient
+			dsnToClient[sentryDsnUrls.ei] = emailIngestionClient
+			dsnToClient[sentryDsnUrls.cs] = coreServicesClient
+			dsnToClient[sentryDsnUrls.risk] = riskClient
+
+			window.Sentry.init({
+				dsn: 'https://8a98568b14824093a09240d84e5c11d0@app.getsentry.com/44743',
+				beforeSend: function(event) {
+
+          var _shouldSendError = window && window.ErrorNotifyHelper &&  window.ErrorNotifyHelper.shouldSendError
+					if(_shouldSendError && _shouldSendError(event)) {
+						/*
+							Almost every time we make a change to Babel or Webpack we end up getting a spurt of
+							"new" errors in Sentry of low-firing errors for shitty 3rd-party libraries like Quill,
+							Velocity, etc. Oh, also memory alerts.
+							We should use Sentry's fingerprinting ability to manually group these together so we
+							can snooze them once and for all (with a comparatively low threshold).
+							https://docs.sentry.io/learn/rollups/
+							https://docs.sentry.io/clients/javascript/usage/#custom-grouping-behavior
+						*/
+						var EXCEPTION_GROUPING_FINGERPRINTS = [
+						{
+							// This is an known error from redux-form that keeps popping up and only affects
+							// Firefox users, so we are okay to ignore forever.
+							fingerprint: ['redux-form', 'eventDataTransferSetData'],
+							test: function(type, value) {
+								return (
+									type === 'Error' &&
+									value === 'Permission denied to access property "setData"'
+								)
+							},
+						},
+						{
+							// Trying to group together all the random syntax errors we see in IE that don't
+							// actually seem to map to syntax errors when you read the code.
+							// Additionally, if we have a *real* syntax error, it will definitely spike the
+							// volume of this alert
+							fingerprint: ['syntax-error', 'expected-token'],
+							test: function(type, value) {
+								return type === 'SyntaxError' || /Expected '?'/i.test(value)
+							},
+						},
+						{
+							// IE runs out of memory sometimes, refreshing pretty much always resolves it
+							fingerprint: ['ie-out-of-memory'],
+							test: function(type, value) {
+								return type === 'Error' && value === 'Out of memory'
+							},
+						},
+						{
+							// IE runs out of memory sometimes, refreshing pretty much always resolves it
+							fingerprint: ['ie-not-enough-memory'],
+							test: function(type, value) {
+								return (
+									type === 'Error' &&
+									value ===
+										'Not enough memory resources are available to complete this operation.'
+								)
+							},
+						},
+						{
+							// The Intl library fails to load on old browsers sometimes, refreshing fixes it
+							fingerprint: ['intl-error'],
+							test: function(type, value) {
+								return (
+									type === 'Error' &&
+									value ===
+										'ReferenceError: Can\'t find variable: Intl'
+								)
+							},
+						},
+						{
+							// ie11 is having issues properly loading Sentry on /join-rfp. We're routing these straight to FE Platform and ignoring them
+							fingerprint: ['fe-platform'],
+							test: function(type, value) {
+								return (
+									type === 'TypeError' &&
+									value ===
+										'Unable to get property \'BrowserClient\' of undefined or null reference'
+								)
+							}
+						}
+					]
+
+						var exceptionType
+						var exceptionValue
+						try {
+							// This is our best guess as to where the relevant error type and value are located
+							exceptionType = event.exception.values[0].type
+							exceptionValue = event.exception.values[0].value
+						} catch (error) {
+							event.extra.exceptionUnusableForFingerprinting = {
+								failureError: error.toString(),
+								originalException: event.exception,
+								pleaseRead: 'If present, it means the exception passed to Sentry didn\'t match our expectations and can\'t be used to determine the fingerprint. There are still other ways to determine the fingerprint. Also, the Sentry error itself is still valid and not a result of this exception.'
+							}
+						}
+						var fingerprint = []
+						if (exceptionType && exceptionValue) {
+							fingerprint = EXCEPTION_GROUPING_FINGERPRINTS.reduce(function(
+								acc,
+								group
+							) {
+								return group.test(exceptionType, exceptionValue)
+									? acc.concat(group.fingerprint)
+									: acc
+							},
+							[])
+						}
+						if (event.fingerprint) {
+							fingerprint = fingerprint.concat(event.fingerprint)
+						}
+						if (fingerprint.length) {
+							event.fingerprint = fingerprint
+						}
+
+						// We want to group all 500 errors together to one sentry alert.
+						// The individual 500 errors can cause a lot of noise for our on-call engineers.
+						// It is likely safe to consolidate these into one alert on Sentry.
+						// To do this we will overwrite the exiting fingerprints to the same fingerprint everytime.
+						var responseStatus = !!event.extra && !!event.extra.extra && event.extra.extra.responseStatus
+						if (responseStatus) {
+							if (responseStatus !== 500 && responseStatus % 500 < 100) {
+								event.fingerprint = ['5xx error']
+							}
+						}
+
+						if (event.stacktrace && event.stacktrace.frames) {
+							if (event.stacktrace.frames.length > 25) {
+								event.stacktrace.frames = event.stacktrace.frames.slice(0, 25)
+							}
+						}
+
+						// Determine which Sentry project to send the event to
+						var normalizedPath = window.location.pathname.replace(
+								/[0-9a-z]{24}/g,
+								':id'
+							)
+						var sentryDsnUrls = BC.settings.sentry.urls
+						var dsn
+						try {
+
+              var _getDsnUrl = window && window.ErrorNotifyHelper && window.ErrorNotifyHelper.getDsnUrl
+              if (_getDsnUrl) {
+                dsn = _getDsnUrl(normalizedPath, sentryDsnUrls, fingerprint)
+              } else {
+                data.extra.errorSettingDsn = 'ErrorNotifyHelper Undefined: using default Dsn'
+                dsn = sentryDsnUrls.default
+              }
+						} catch (error) {
+							data.extra.errorSettingDsn = error.name + ': ' + error.message
+							dsn = sentryDsnUrls.default
+						}
+
+						var sentryClient = dsnToClient[dsn]
+						sentryClient.captureEvent(event)
+					}
+					return null;
+				},
+				integrations:[
+					new window.Sentry.Integrations.GlobalHandlers({
+						onunhandledrejection: false // prevents XHR errors from being double-wrapped by both Sentry and our own code
+					})
+				],
+				release: '6cb6eb8b14ffe17f9067dc544928fe3f4d0bbc8e',
+				whitelistUrls: [
+					new RegExp(window.location.host),
+					new RegExp('d2w27agad0eft.cloudfront.net'),
+					/webpack-internal:/,
+				],
+			});
+
+			window.Sentry.configureScope(function(scope) {
+				var normalizedPath = window.location.pathname.replace(
+					/[0-9a-z]{24}/g,
+					':id'
+				)
+				var hasFullStory = !!window.FS
+				scope.setTag('normalizedPath', normalizedPath)
+				scope.setTag('isClientError', true)
+				scope.setTag('hasFullStory', hasFullStory)
+        var _getFullStoryLink = window && window.ErrorNotifyHelper && window.ErrorNotifyHelper.getFullStoryLink
+				if (hasFullStory && _getFullStoryLink) {
+					scope.setTag('fullStoryLink', _getFullStoryLink())
+				}
+				if (window.__hasSubbiePro) {
+					scope.setTag('subbiePro', 'subbie-pro-bug-alert')
+				}
+				if (window.__fluxActionLog) {
+					scope.setExtra('actionLog', window.__fluxActionLog)
+				}
+
+				scope.setTag('host', window.location.host)
+				scope.setTag('clientHash', '6cb6eb8b14ffe17f9067dc544928fe3f4d0bbc8e')
+
+				if (BC.me && BC.me._id && BC.me.email) {
+					scope.setUser({
+						id: BC.me._id,
+						email: BC.me.email,
+					})
+				}
+			})
+			if(window.__bcUncaughtErrors.length > 0) {
+				window.Sentry.withScope(function(scope) {
+					window.__bcUncaughtErrors.forEach(function(e) {
+						window.Sentry.captureException(e)
+					})
+				})
+			}
+		})()
+	})
+</script>
+<script nonce="">
+  var bugsnagScriptTag = document.createElement('script');
+  bugsnagScriptTag.src = '/bugsnag/bugsnag.min.js';
+  bugsnagScriptTag.crossOrigin = "anonymous"
+  bugsnagScriptTag.addEventListener('load', function registerBugsnag() {
+    // bugsnag should be ready
+    if (window && window.Bugsnag) {
+      var bugsnagSettings = BC.settings.bugsnag;
+      var bugsnagKeyMap = {
+        bidding: bugsnagSettings.bidding.frontend_api_key,
+        network: bugsnagSettings.network.frontend_api_key,
+        risk: bugsnagSettings.risk.frontend_api_key
+      };
+      var busgsnagOnError = function bugsnagOnError(event) {
+
+        var _shouldSendErrorToBugSnag = window && window.ErrorNotifyHelper && window.ErrorNotifyHelper.shouldSendErrorToBugsnag
+        if (!_shouldSendErrorToBugSnag || !_shouldSendErrorToBugSnag(event)) {
+          return false;
+        }
+        var normalizedPath = window.location.pathname.replace(
+          /[0-9a-z]{24}/g,
+          ':id'
+        );
+        event.context = normalizedPath;
+        if (event.device && event.device.id) {
+          event.device.id = '<REDACTED>';
+        }
+        var hasFullStory = !!window.FS;
+        var metadata = {
+          'normalizedPath': normalizedPath,
+          'isClientError': true,
+          'hasFullStory': hasFullStory,
+          'host': window.location.host,
+        };
+        var _getFullStoryLink = window && window.ErrorNotifyHelper && window.ErrorNotifyHelper.getFullStoryLink
+        if (hasFullStory && _getFullStoryLink) {
+          metadata.fullStoryLink = _getFullStoryLink()
+        }
+        if (window.__hasSubbiePro) {
+          metadata.subbiePro = 'subbie-pro-bug-alert';
+        }
+        if (window.__fluxActionLog) {
+          metadata.actionLog = window.__fluxActionLog;
+        }
+        if (window.BC && window.BC.myCompany && window.BC.myCompany._id) {
+          if (window.BC.myCompany._id === '555110fac609c70700ea6fed') {
+            metadata.isActuallyHaskell = 'isHaskell';
+          }
+          if (window.BC.myCompany._id === '5609ad2f1838080700169d43') {
+            metadata.isHrcg = 'isHrcg';
+          }
+        }
+        event.addMetadata('metadata', metadata);
+
+        if (window.BC && window.BC.me && window.BC.me._id) {
+          event.setUser(window.BC.me._id || ("ip_hash_" + window.BC.ipHash));
+        }
+        var _getBugsnagProject = window && window.ErrorNotifyHelper && window.ErrorNotifyHelper.getBugsnagProject
+        if (_getBugsnagProject) {
+          var project = _getBugsnagProject()
+          if (project && bugsnagKeyMap[project]) {
+            event.apiKey = bugsnagKeyMap[project]
+          }
+        }
+        return true
+      }
+      var enabledBreadcrumbTypes = ['error', 'navigation', 'user'];
+      var redactedKeys = [
+        'password',
+        'password_confirmation',
+        'confirmPassword',
+        'access_token',
+        'accessToken',
+        'oxygen_token',
+        'oxygenToken',
+        'authorization',
+        'remoteAddress',
+        'query',
+        'clientIp',
+        'x-real-ip',
+        'centauth-token',
+        'x-ads-gateway-secret',
+        'x-forwarded-for'
+      ];
+      var bugsnagWrapper = window.Bugsnag;
+      var noop = function noop() { /* do nothing */ }
+      var bugsnagMockNoop = { notify: noop, leaveBreadcrumb: noop };
+      window.bugsnagClient = bugsnagMockNoop;
+      var releaseStage = (function getReleaseStage() {
+        switch (window.location.host.split('.')[0]) {
+          case 'app':
+            return 'production';
+          case 'app-alpha':
+            return 'alpha';
+          case 'app-stage':
+            return 'stage';
+          case 'app-dev':
+          case 'app-dev2':
+          case 'app-dev3':
+            return 'dev'
+          case 'localhost':
+          default:
+            return 'localhost';
+        }
+      })();
+      if (bugsnagKeyMap.bidding) {
+        window.bugsnagClient = bugsnagWrapper.start({
+          apiKey: bugsnagKeyMap.bidding,
+          onError: busgsnagOnError,
+          autoDetectErrors: false, /* errors will be passed from client app */
+          appVersion: BC.clientHash || 'unknown_git_hash',
+          releaseStage: releaseStage,
+          appType: 'client',
+          enabledBreadcrumbTypes: enabledBreadcrumbTypes,
+          redactedKeys: redactedKeys,
+          collectUserIp: false,
+          featureFlags: Object.keys((window.BC && window.BC.featureFlags) || {})
+            .filter(name => !name.startsWith('$'))
+            .map(name => ({
+              name,
+              variant: window.BC.featureFlags[name],
+            })),
+        });
+      }
+    }
+  });
+  document.body.appendChild(bugsnagScriptTag);
+</script>
+
+<script
+	async
+	src="https://www.googletagmanager.com/gtag/js?id=GTM-PTCP4BX"
+></script>
+<script nonce="">
+	window.dataLayer = window.dataLayer || []
+	function gtag() {
+		dataLayer.push(arguments)
+	}
+
+	/* Never remove this and please read:
+	Without this dataLayer.push section, a memory leak will significantly degrade
+	performance in our app. Google Tag Manager (GTM) carries references to the DOM in its reports,
+	preventing any references to those nodes from being garbage collected as the user navigates.
+	The fix is to clone the nodes GTM cares about when sending a report.
+	A wonderful, detailed explanation can be found here:
+	https://www.voorhoede.nl/en/blog/your-website-probably-has-a-memory-leak/
+	*/
+	window.dataLayer.push = function (event) {
+		if(event['gtm.element']) {
+			event['gtm.element'] = event['gtm.element'].cloneNode(true);
+		}
+		return Array.prototype.push.apply(this, arguments);
+	}
+	gtag('js', new Date())
+	gtag('config', 'GTM-PTCP4BX')
+</script>
+
+
+
+</body>
+</html>
